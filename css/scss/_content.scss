@@ -1,0 +1,116 @@
+.items-accordion {
+    margin: 100px 0 30px 100px;
+    //ajustando espaço da lista conforme telas
+    @include d(l) {
+        margin: 100px 0 20px 50px;
+    }
+    @include d(m) {
+        margin: 50px 0 20px 60px;
+    }
+    @include d(s) {
+        margin: 20px 0 10px 0px;
+    }
+}
+
+.items-accordion dt {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0px;
+    color: #a141eb;
+    font-family: Helvetica;
+    //ajustando tamanho da fonte do titulo da lista conforme telas
+    @include d(l) {
+        font-size: 1.3em;
+    }
+    @include d(m) {
+        font-size: 1em;
+    }
+    @include d(s) {
+        font-size: .6em;
+    }
+}
+
+.js-accordion dt::after {
+    content: '˅';
+    margin-left: 20px;
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 2em;
+    color: #a141eb;
+    @include d(l) {
+        top: 10px;
+    }
+    @include d(m) {
+        top: 10px;
+    }
+    @include d(s) {
+        top: 5px;
+    }
+}
+
+.js-accordion dt.ativo::after {
+    content: '^';
+}
+
+
+
+.js-accordion dd.ativo {
+    display: block;
+    animation: slideDown .6s forwards;
+    line-height: 1.3;
+    font-size: 1.2em;
+    max-width: 1200px;
+    //ajustando paragrafo da lista confome telas
+    @include d(l) {
+        max-width: 800px;
+        font-weight: lighter;
+    }
+    @include d(m) {
+        max-width: 650px;
+        font-size: 1em;
+    }
+    @include d(s) {
+        font-size: .6em;
+        max-width: 350px;
+    }
+}
+
+.items-accordion dd {
+    margin: 10px 0;
+    @include d(s) {
+        margin: 5px 0 0 0;
+    }
+}
+
+.js-accordion dd {
+    display: none;
+}
+
+//pequena animação para o dd da lista
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 200px;
+    }
+}
+
+footer {
+    margin-top: 100px;
+    width: 100%;
+    height: 50px;
+    background: #a141eb;
+    //diminuindo tamanho e espaçamento no mobile
+    @include d(s) {
+        margin-top: 50px;
+        margin-bottom: 0;
+        width: 100%;
+        height: 30px;
+    }
+}

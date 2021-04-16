@@ -1,0 +1,320 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    ;
+}
+
+.header-bg {
+    display: block;
+    max-width: 100%;
+    background:linear-gradient(to right,white 30%, transparent 70%), url("../img/header.png") no-repeat center;
+    background-size: cover;
+    height: 500px;
+    //Ajustando tamanho da foto de background conforme tamanho da tela
+    @include d(l) {
+        max-width: 100%;
+        height: 400px;
+    }
+    @include d(m) {
+        max-width: 100%;
+        height: 350px;
+    }
+    @include d(s) {
+        max-width: 100%;
+        height: 180px;
+    }
+}
+
+.menu-bg {
+    background: #8900ff;
+    height: 70px;
+    max-width: 50%;
+    border-radius: 0px 0 20px 0;
+    //ajustando background do menu
+    @include d(l) {
+        height: 50px;
+        max-width: 60%;
+    }
+    @include d(m) {
+        height: 40px;
+        max-width: 57%;
+    }
+    //display none no mobile para o menu hamburguer
+    @include d(s) {
+        display: none;
+    }
+}
+
+.menu {
+    display: flex;
+    position: absolute;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    top: 15px;
+    justify-content: space-around;
+    text-transform: uppercase;
+    left: 70px;
+    //diminuindo posicionamento dos botoes conforme tamanho de telas
+    @include d(l) {
+        justify-content: flex-start;
+        position: relative;
+        left: 10px;
+        top: 0px;
+    }
+    @include d(m) {
+        position: relative;
+        left: 20px;
+        top: 15px;
+    }
+    //display none no mobile para o menu hamburguer
+    @include d(s) {
+        display: none;
+    }
+}
+
+.menu a {
+    color: white;
+}
+
+.editar {
+    position: relative;
+    margin-top: -4px;
+    @include d(l) {
+        margin-top: 0;
+    }
+    @include d(m) {
+        position: relative;
+        bottom: 17px;
+        margin-top: 0;
+    }
+}
+
+//ajustando posicionamento do botao roxo conforme telas
+.consultor {
+    @include d(m) {
+        position: relative;
+        bottom: 15px;
+    }
+}
+
+.menu .editar a {
+    border-radius: 25px;
+    text-align: center;
+    font-size: .875em;
+    background: #e1a607;
+    padding: 15px 40px 15px 50px;
+    //diminuindo botao laranja conforme tamanho de telas
+    @include d(l) {
+        padding: 10px 20px 10px 40px;
+        font-size: .8em;
+    }
+    @include d(m) {
+        padding: 10px 20px 10px 40px;
+        font-size: .5em;
+    }
+}
+
+.menu .editar img {
+    position: relative;
+    margin: 2px auto;
+    left: 50px;
+    top: 8px;
+    //movendo icone do botao laranja
+    @include d(l) {
+        left: 40px;
+        top: 10px;
+        max-width: 28px;
+    }
+    @include d(m) {
+        max-width: 20px;
+        left: 40px;
+        top: 8px;
+    }
+}
+
+.menu .consultor a {
+    border-radius: 30px;
+    background: #7928b7;
+    font-size: .875em;
+    padding: 15px 40px 15px 50px;
+    //diminuindo botao roxo conforme tamanho de telas
+    @include d(l) {
+        padding: 10px 20px 10px 40px;
+        font-size: .8em;
+    }
+    @include d(m) {
+        padding: 10px 20px 10px 40px;
+        font-size: .5em;
+        margin: 0 85px 50px 0;
+    }
+}
+
+.menu .consultor img {
+    position: relative;
+    left: 50px;
+    top: 8px;
+    //ajustando tamanho do icone conforme telas
+    @include d(l) {
+        left: 40px;
+        margin: 2px auto;
+        top: 8px;
+        max-width: 25px;
+    }
+    @include d(m) {
+        max-width: 16px;
+        left: 40px;
+        top: 8px;
+    }
+}
+
+.menu .comprar a {
+    border-radius: 25px;
+    display: inline;
+    position: relative;
+    top: 14px;
+    margin: 0 20px;
+    background: #0fb3d4;
+    font-size: .875em;
+    padding: 15px 20px;
+    //ajustando botao conforme tamanho de telas
+    @include d(l) {
+        right: -30px;
+        font-size: .8em;
+        padding: 10px 20px;
+        position: absolute;
+        margin: 0px auto;
+    }
+    @include d(m) {
+        right: -50px;
+        padding: 10px 15px;
+        font-size: .5em;
+        position: absolute;
+        top: -10px;
+    }
+}
+
+.header .area-restrita {
+    display: flex;
+    position: absolute;
+    right: 120px;
+    text-align: center;
+    background: #e1a607;
+    padding: 10px 40px;
+    border-radius: 0 0 10px 10px;
+    top: 0;
+    //ajustando botao conforme tamanho de telas
+    @include d(l) {
+        right: 50px;
+        padding: 10px 20px;
+    }
+    @include d(m) {
+        right: 20px;
+        padding: 5px 20px;
+    }
+    //display none no mobile para o menu hamburguer
+    @include d(s) {
+        display: none;
+    }
+}
+
+.header .area-restrita img {
+    position: relative;
+    left: -10px;
+    top: -2px;
+}
+
+.area-restrita a {
+    color: white;
+}
+
+.header h1 {
+    font-size: 3em;
+    color: #e1a607;
+    margin: 100px 0 0 100px;
+    //Ajustando o titulo confome tamanho da tela
+    @include d(l) {
+        margin: 100px 0 0 50px;
+    }
+    @include d(m) {
+        margin: 60px 0 0 50px;
+        font-size: 2em;
+    }
+    @include d(s) {
+        margin: 0px 0 10px 0;
+        font-size: 1em;
+    }
+}
+
+.header p {
+    margin: 10px 0 0 100px;
+    font-size: 1em;
+    line-height: 1.5;
+    //Ajustando o parágrafo confome tamanho das tela
+    @include d(l) {
+        margin: 10px 0 0 50px;
+    }
+    @include d(m) {
+        margin: 10px 0 0 50px;
+        font-size: .875em;
+    }
+    @include d(s) {
+        margin: 0 5px;
+        font-size: .5em;
+        margin: 10px 0 0 0px;
+    }
+}
+
+//link no paragrafo
+.header p>a {
+    color: #7928b7;
+    font-weight:bold;
+    text-decoration: underline;
+}
+
+//Menu Hamburger para o mobile
+.mobile-btn {
+    @include d(s) {
+        //criando a linha do meio e centralizando o menu
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        color: #fff;
+        border-top: 4px solid;
+        top: 20px;
+        left: 90%;
+        position: relative;
+        cursor: pointer;
+        @include d(m) {
+            display: none;
+        }
+        //criando a linha superior e inferior
+        &::after,
+        &::before {
+            content: '';
+            display: block;
+            height: 4px;
+            margin-top: 6px;
+            background: #fff;
+            position: relative;
+            transition: transform .2s ease;
+        }
+        //função que rotaciona o menu
+        &:hover {
+            border-top-color: transparent;
+            &::after {
+                margin-top: 0px;
+                top: 2px;
+                transform: rotate(45deg);
+            }
+            &:hover::before {
+                margin-top: 0px;
+                top: 6px;
+                transform: rotate(135deg);
+            }
+        }
+    }
+}

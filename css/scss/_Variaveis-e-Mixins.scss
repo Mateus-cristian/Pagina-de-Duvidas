@@ -1,0 +1,71 @@
+//carregando as fontes externas
+@font-face {
+    font-family: 'Monteserrat-bold';
+    src: url(../../fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat-Light';
+    src: url(../../fonts/Montserrat-Light.ttf);
+}
+
+// Cores
+$cor-texto: #17222D;
+$cor-subtitulo: #7928b7;
+
+// Fontes
+$fonte-1: 'Monteserrat-bold',
+serifa,
+Helvetica,
+'roboto';
+$fonte-2: 'Montserrat-Light',
+Georgia,
+Arial;
+// funcão para converter pixel em EM
+@function em($pixel, $contexto: 16) {
+    @return $pixel / $contexto+em;
+}
+
+// Mixin para tamanho das Fontes
+
+//fonte dos titulos
+@mixin tipo-1($size) {
+    font-family: $fonte-1;
+    @if $size==24 {
+        font-size: em(24);
+        line-height: em(30, 24)
+    }
+    @else if $size==36 {
+        font-size: em(36);
+        line-height: em(30, 36)
+    }
+}
+
+//fonte dos paragrafos dependendo o tamanho da tela
+@mixin tipo-2($size) {
+    font-family: $fonte-2;
+    @if $size==11 {
+        font-size: em(11);
+        line-height: em(30, 11);
+    }
+    @if $size==14 {
+        font-size: em(14);
+        line-height: em(30, 14);
+    }
+    @if $size==18 {
+        font-size: em(18);
+        line-height: em(30, 18);
+    }
+    @else if $size==20 {
+        font-size: em(20);
+        line-height: em(30, 20);
+    }
+    @else if $size==24 {
+        font-size: em(24);
+        line-height: em(30, 24);
+    }
+        @else if $size==32 {
+        font-size: em(32);
+        line-height: em(30, 32);
+    }
+}

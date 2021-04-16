@@ -1,0 +1,64 @@
+// Variaveis do Grid //
+$xl-device:1390px;
+$l-device:980px;
+$m-device:760px;
+$s-device:550px;
+//box sizing
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+// Mixins de media-querie
+@mixin d($size) {
+    @if $size==xl {
+        @media screen and (min-width: $lx-device - 1) {
+            @content;
+        }
+    }
+    @else if $size==l {
+        @media screen and (min-width: $l-device - 1) and (max-width: $xl-device - 1) {
+            @content;
+        }
+    }
+    @else if $size==m {
+        @media screen and (min-width: $m-device) and (max-width: $l-device - 1) {
+            @content;
+        }
+    }
+    @else if $size==s {
+        @media screen and(max-width: $s-device - 1) {
+            @content;
+        }
+    }
+}
+
+//Mixin de clearFix
+@mixin clearfix {
+    &::after,
+    &::before {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+//Mixin do container
+@mixin container {
+    max-width: $l-device;
+    margin: 0 auto;
+    position: relative;
+    @include d(m) {
+        max-width: $m-device;
+    }
+    @include d(s) {
+        max-width: $s-device;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    @include clearfix;
+}
+
+.container {
+    @include container;
+}
