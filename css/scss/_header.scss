@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    background:#f1f1f1;
 }
 
 a {
@@ -179,10 +180,11 @@ a {
     margin: 0 20px;
     background: #0fb3d4;
     font-size: .875em;
-    padding: 15px 20px;
+    padding: 16px 20px;
     //ajustando botao conforme tamanho de telas
     @include d(l) {
         right: -30px;
+        top: 10px;
         font-size: .8em;
         padding: 10px 20px;
         position: absolute;

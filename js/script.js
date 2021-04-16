@@ -1,4 +1,4 @@
-const accordionList = document.querySelectorAll('.js-accordion dt');
+const accordionList = document.querySelectorAll('.js-accordion img');
 accordionList[0].classList.add('ativo');
 accordionList[0].nextElementSibling.classList.add('ativo')
 

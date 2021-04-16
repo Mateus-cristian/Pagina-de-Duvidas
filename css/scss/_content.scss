@@ -2,20 +2,22 @@
     margin: 100px 0 30px 100px;
     //ajustando espaço da lista conforme telas
     @include d(l) {
-        margin: 100px 0 20px 50px;
+        margin: 100px 150px 20px 50px;
     }
     @include d(m) {
-        margin: 50px 0 20px 60px;
+        margin: 50px 100px 20px 50px;
     }
     @include d(s) {
-        margin: 20px 0 10px 0px;
+        margin: 50px 90px 10px 0px;
     }
 }
 
 .items-accordion dt {
     font-size: 1.5em;
+    width:100%;
+    border-bottom:1px dotted #ccc;
+    margin-bottom:50px;
     font-weight: bold;
-    margin-bottom: 0px;
     color: #a141eb;
     font-family: Helvetica;
     //ajustando tamanho da fonte do titulo da lista conforme telas
@@ -27,54 +29,31 @@
     }
     @include d(s) {
         font-size: .6em;
+        margin-bottom:20px;
     }
 }
-
-.js-accordion dt::after {
-    content: '˅';
-    margin-left: 20px;
-    display: inline-block;
-    position: relative;
-    top: 10px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 2em;
-    color: #a141eb;
-    @include d(l) {
-        top: 10px;
-    }
-    @include d(m) {
-        top: 10px;
-    }
-    @include d(s) {
-        top: 5px;
-    }
-}
-
-.js-accordion dt.ativo::after {
-    content: '^';
-}
-
-
-
 .js-accordion dd.ativo {
     display: block;
     animation: slideDown .6s forwards;
     line-height: 1.3;
     font-size: 1.2em;
+    margin-bottom:50px;
     max-width: 1200px;
     //ajustando paragrafo da lista confome telas
     @include d(l) {
         max-width: 800px;
         font-weight: lighter;
+        font-size: 1em;
     }
     @include d(m) {
         max-width: 650px;
-        font-size: 1em;
+        margin-bottom:20px;
+        font-size: 0.875em;
     }
     @include d(s) {
         font-size: .6em;
         max-width: 350px;
+         margin-bottom:20px;
     }
 }
 
@@ -112,5 +91,45 @@ footer {
         margin-bottom: 0;
         width: 100%;
         height: 30px;
+    }
+}
+
+//Ajustando a seta ao lado da dt
+.items-accordion img{
+    display: inline-block;
+    position: relative;
+    float: right;
+    bottom: 70px;
+    cursor:pointer;
+    animation: SlideSetaDesativa .6s forwards;
+    @include d(s){
+        max-width:20px;
+        bottom: 35px;
+    }
+}
+
+.items-accordion img.ativo{
+    animation: SlideSetaAtiva .6s forwards;
+    cursor:pointer;
+}
+
+//animação ao ativar o botão
+@keyframes SlideSetaAtiva {
+    from{
+       transform: rotate(0deg)
+    }
+    to {
+     transform: rotate(180deg)
+    }
+}
+
+
+//animação ao desativar o botão
+@keyframes SlideSetaDesativa {
+    from{
+       transform: rotate(180deg)
+    }
+    to {
+     transform: rotate(0deg)
     }
 }
