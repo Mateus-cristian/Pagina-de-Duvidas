@@ -211,12 +211,12 @@ a {
     top: 0;
     //ajustando botao conforme tamanho de telas
     @include d(l) {
-        right: 50px;
+        right: 100px;
         padding: 10px 20px;
     }
     @include d(m) {
-        right: 20px;
-        padding: 5px 20px;
+        right: 100px;
+        padding: 5px 15px;
     }
     //display none no mobile para o menu hamburguer
     @include d(s) {
