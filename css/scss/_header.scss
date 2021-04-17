@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background:#f1f1f1;
+    background: #f1f1f1;
 }
 
 a {
@@ -12,7 +12,7 @@ a {
 .header-bg {
     display: block;
     max-width: 100%;
-    background:linear-gradient(to right,white 30%, transparent 70%), url("../img/header.png") no-repeat center;
+    background: linear-gradient(to right, white 30%, transparent 70%), url("../img/header.png") no-repeat center;
     background-size: cover;
     height: 500px;
     //Ajustando tamanho da foto de background conforme tamanho da tela
@@ -58,18 +58,18 @@ a {
     top: 15px;
     justify-content: space-around;
     text-transform: uppercase;
-    left: 70px;
+    left: 20px;
     //diminuindo posicionamento dos botoes conforme tamanho de telas
     @include d(l) {
         justify-content: flex-start;
         position: relative;
-        left: 10px;
+        float: left;
+        left: -20px;
         top: 0px;
     }
     @include d(m) {
-        position: relative;
-        left: 20px;
-        top: 15px;
+        position: absolute;
+        left: -15px;
     }
     //display none no mobile para o menu hamburguer
     @include d(s) {
@@ -77,11 +77,14 @@ a {
     }
 }
 
-.menu a {
-    color: white;
+.menu li {
+    list-style: none;
+    a {
+        color: white;
+    }
 }
 
-.editar {
+.botao-editar {
     position: relative;
     margin-top: -4px;
     @include d(l) {
@@ -95,16 +98,15 @@ a {
 }
 
 //ajustando posicionamento do botao roxo conforme telas
-.consultor {
+.botao-consultor {
     @include d(m) {
         position: relative;
         bottom: 15px;
     }
 }
 
-.menu .editar a {
+.botao-editar a {
     border-radius: 25px;
-    text-align: center;
     font-size: .875em;
     background: #e1a607;
     padding: 15px 40px 15px 50px;
@@ -119,7 +121,7 @@ a {
     }
 }
 
-.menu .editar img {
+.menu .botao-editar img {
     position: relative;
     margin: 2px auto;
     left: 50px;
@@ -137,7 +139,7 @@ a {
     }
 }
 
-.menu .consultor a {
+.menu .botao-consultor a {
     border-radius: 30px;
     background: #7928b7;
     font-size: .875em;
@@ -154,7 +156,7 @@ a {
     }
 }
 
-.menu .consultor img {
+.menu .botao-consultor img {
     position: relative;
     left: 50px;
     top: 8px;
@@ -172,9 +174,8 @@ a {
     }
 }
 
-.menu .comprar a {
+.botao-comprar a {
     border-radius: 25px;
-    display: inline;
     position: relative;
     top: 14px;
     margin: 0 20px;
@@ -183,7 +184,7 @@ a {
     padding: 16px 20px;
     //ajustando botao conforme tamanho de telas
     @include d(l) {
-        right: -30px;
+        right: -180px;
         top: 10px;
         font-size: .8em;
         padding: 10px 20px;
@@ -273,7 +274,7 @@ a {
 //link no paragrafo
 .header p>a {
     color: #7928b7;
-    font-weight:bold;
+    font-weight: bold;
     text-decoration: underline;
 }
 
